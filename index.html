@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="resume-builder">
+        <h1>Downloadable Resume Builder</h1>
+        <form id="resumeForm">
+            <h2>Personal Information</h2>
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="text" id="phone" placeholder="Phone Number" required />
+            <input type="text" id="linkedin" placeholder="LinkedIn Profile URL" />
+
+            <h2>Education</h2>
+            <div id="educationContainer">
+                <input type="text" class="education" placeholder="Degree, Institution" required />
+            </div>
+            <button type="button" onclick="addEducation()">Add More Education</button>
+
+            <h2>Work Experience</h2>
+            <div id="experienceContainer">
+                <input type="text" class="experience" placeholder="Job Title, Company" required />
+            </div>
+            <button type="button" onclick="addExperience()">Add More Experience</button>
+
+            <h2>Skills</h2>
+            <textarea id="skills" placeholder="Skills (comma separated)" required></textarea>
+
+            <button type="button" onclick="generateResume()">Generate Resume</button>
+        </form>
+        <div id="resumeOutput" class="output"></div>
+    </div>
+
+    <!-- Shareable link and download option -->
+    <div id="shareable-link-container" style="display: none;"></div>
+    <h2>Shareable link</h2>
+    <pre>Here is your username link, to view or edit your resume</pre>
+    <a href="shareable-link" id="shareable-link" target="_blank"></a>
+    <br><br>
+    <button id="download-pdf"><b>Download as PDF</b></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
